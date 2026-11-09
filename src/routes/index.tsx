@@ -60,7 +60,7 @@ function Index() {
     <div className="flex min-h-screen items-center justify-center p-10">
       <div className="bg-app flex h-[802px] w-[1428px] flex-col overflow-hidden rounded-[18px] text-foreground">
         {/* Top bar */}
-        <header className="flex h-[56px] shrink-0 items-center bg-card px-[90px] pr-[22px]" style={{ paddingLeft: 92 }}>
+        <header className="flex h-[56px] shrink-0 items-center bg-card pl-[17px] pr-[22px]">
           <div className="bg-logo -ml-[2px] mr-[12px] flex size-8 items-center justify-center rounded-[9px] text-primary-foreground">
             <Music2 className="size-[18px]" strokeWidth={2.5} />
           </div>
