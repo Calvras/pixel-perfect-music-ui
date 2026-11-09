@@ -57,8 +57,8 @@ const topArtists = [
 
 function Index() {
   return (
-    <div className="flex min-h-screen items-center justify-center p-10">
-      <div className="bg-app flex h-[802px] w-[1428px] flex-col overflow-hidden rounded-[18px] text-foreground">
+    <div className="h-screen w-screen">
+      <div className="bg-app flex h-full w-full flex-col overflow-hidden text-foreground">
         {/* Top bar */}
         <header className="flex h-[56px] shrink-0 items-center bg-card pl-[17px] pr-[22px]">
           <div className="bg-logo -ml-[2px] mr-[12px] flex size-8 items-center justify-center rounded-[9px] text-primary-foreground">
