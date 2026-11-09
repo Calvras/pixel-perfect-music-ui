@@ -94,7 +94,7 @@ function Index() {
               {playlists.map(([name, n], idx) => (
                 <div key={name} className={`flex h-[71.5px] items-center gap-3 px-[15px] ${idx === 1 ? "bg-row-active" : ""}`}>
                   <div className="relative size-[56px] shrink-0 overflow-hidden rounded-lg">
-                    <Tile src={covers} i={plCovers[idx]} className="size-full" />
+                    <Tile src={covers} i={plCovers[idx] ?? 0} className="size-full" />
                     <span className="absolute bottom-1 left-1.5 flex items-center text-[10.5px] font-semibold text-primary-foreground drop-shadow">
                       <Music className="mr-0.5 size-2.5" />{n}
                     </span>
