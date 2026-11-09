@@ -19,11 +19,12 @@
   --color-panel: var(--panel);
   --color-row-active: var(--row-active);
   --color-track: var(--track);
+  --color-rail: var(--rail);
 }
 
 :root {
   --radius: 0.75rem;
-  --background: oklch(0.22 0.005 300);
+  --background: oklch(0.08 0 0);
   --foreground: oklch(0.96 0.003 300);
   --card: oklch(0.28 0.008 280);
   --primary: oklch(0.97 0 0);
@@ -35,8 +36,9 @@
   --panel: oklch(1 0 0 / 0.06);
   --row-active: oklch(1 0 0 / 0.1);
   --track: oklch(1 0 0 / 0.2);
-  --gradient-page: oklch(0.22 0.005 300);
-  --gradient-app: linear-gradient(180deg, oklch(0.44 0.012 280), oklch(0.32 0.01 280) 58%, oklch(0.23 0.005 300) 58%, oklch(0.2 0.005 300));
+  --gradient-page: oklch(0.08 0 0);
+  --rail: oklch(0.14 0 0 / 0.85);
+  --gradient-app: radial-gradient(60% 45% at 50% 0%, oklch(0.36 0.04 15 / 0.9), transparent 70%), radial-gradient(45% 40% at 20% 10%, oklch(0.32 0.01 280 / 0.8), transparent 70%), radial-gradient(45% 40% at 85% 5%, oklch(0.3 0.03 20 / 0.7), transparent 70%), oklch(0.08 0 0);
   --gradient-logo: linear-gradient(135deg, oklch(0.75 0.17 20), oklch(0.6 0.22 300));
   --gradient-play: radial-gradient(circle at 35% 30%, oklch(0.7 0.2 300), oklch(0.5 0.25 290));
   --gradient-promo: linear-gradient(135deg, oklch(0.38 0.03 320), oklch(0.3 0.02 300));
@@ -53,7 +55,16 @@
   }
 }
 
-@utility bg-app { background: var(--gradient-app); box-shadow: var(--shadow-app); }
+@utility bg-app {
+  background: var(--gradient-app);
+  background-size: 160% 160%;
+  animation: bg-drift 24s ease-in-out infinite alternate;
+}
+@keyframes bg-drift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 20%; }
+  100% { background-position: 30% 0%; }
+}
 @utility bg-logo { background: var(--gradient-logo); }
 @utility bg-play { background: var(--gradient-play); box-shadow: 0 0 0 14px oklch(0.75 0.12 310 / 0.35), 0 0 0 30px oklch(0.8 0.08 310 / 0.25); }
 @utility bg-promo { background: var(--gradient-promo); }
