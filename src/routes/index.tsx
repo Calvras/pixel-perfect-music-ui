@@ -61,7 +61,7 @@ function Index() {
       <div className="bg-app flex h-full w-full flex-col overflow-hidden text-foreground">
         {/* Top bar */}
         <header className="flex h-[56px] shrink-0 items-center bg-card pl-[17px] pr-[22px]">
-          <div className="bg-logo -ml-[2px] mr-[12px] flex size-8 items-center justify-center rounded-[9px] text-primary-foreground">
+          <div className="bg-logo -ml-[2px] mr-[12px] flex size-8 items-center justify-center rounded-[9px] text-foreground">
             <Music2 className="size-[18px]" strokeWidth={2.5} />
           </div>
           <nav className="flex items-center gap-1 text-[14.5px]">
@@ -95,7 +95,7 @@ function Index() {
                 <div key={name} className={`flex h-[71.5px] items-center gap-3 px-[15px] ${idx === 1 ? "bg-row-active" : ""}`}>
                   <div className="relative size-[56px] shrink-0 overflow-hidden rounded-lg">
                     <Tile src={covers} i={plCovers[idx] ?? 0} className="size-full" />
-                    <span className="absolute bottom-1 left-1.5 flex items-center text-[10.5px] font-semibold text-primary-foreground drop-shadow">
+                    <span className="absolute bottom-1 left-1.5 flex items-center text-[10.5px] font-semibold text-foreground drop-shadow">
                       <Music className="mr-0.5 size-2.5" />{n}
                     </span>
                   </div>
@@ -114,14 +114,14 @@ function Index() {
           <main className="flex min-w-0 flex-1 flex-col overflow-hidden rounded-[14px] bg-panel">
             <section className="relative h-[198px] shrink-0 overflow-hidden">
               <img src={hero} alt="Chill Vibes playlist cover" width={1536} height={640} className="absolute inset-0 size-full object-cover" />
-              <div className="relative px-[25px] pt-[22px] text-primary-foreground">
+              <div className="relative px-[25px] pt-[22px] text-foreground">
                 <h1 className="text-[56px] font-bold leading-[1.05] tracking-tight drop-shadow-sm">Chill Vibes</h1>
                 <p className="mt-[12px] text-[12.5px] font-medium">Playlist • 67 songs • 2h 31 min</p>
                 <div className="mt-[38px] flex items-center gap-6">
                   <MoreHorizontal className="size-5" /><Pin className="size-4" />
                 </div>
               </div>
-              <button className="bg-play absolute right-[56px] top-[73px] flex size-[56px] items-center justify-center rounded-full text-primary-foreground">
+              <button className="bg-play absolute right-[56px] top-[73px] flex size-[56px] items-center justify-center rounded-full text-foreground">
                 <Play className="ml-1 size-6 fill-current" />
               </button>
             </section>
