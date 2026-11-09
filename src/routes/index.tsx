@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  ListFilter, Plus, ArrowLeftToLine, Music2, Search, MoreHorizontal, Bell, Play, Pin,
-  Volume2, Heart, Home, Library, Settings, SkipBack, SkipForward, Shuffle, Repeat, Maximize2, Music,
+  Music2, Search, MoreHorizontal, Bell, Play, Pin,
+  Volume2, Heart, Home, Library, Settings, SkipBack, SkipForward, Shuffle, Repeat, Maximize2,
 } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import covers from "@/assets/covers.jpg";
@@ -30,12 +30,6 @@ function Tile({ src, i, className = "" }: { src: string; i: number; className?: 
     />
   );
 }
-
-const playlists = [
-  ["Feel Good Hits", 121], ["Chill Vibes", 67], ["Focus Mode", 17], ["Weekend Tunes", 45],
-  ["Morning Boost", 194], ["Relax & Unwind", 8], ["Workout Energy", 62], ["Party Mix", 103], ["Rainy Day Sounds", 29],
-] as const;
-const plCovers = [0, 1, 2, 9, 7, 3, 12, 4, 5];
 
 const songs = [
   ["Cruel Summer", "Taylor Swift", "Lover", "22.6.2024", "4:00", 0],
