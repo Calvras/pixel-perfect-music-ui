@@ -161,7 +161,7 @@ function Index() {
             <div className="text-[12.5px] text-muted-foreground">Taylor Swift</div>
           </div>
           <Heart className="size-4 fill-muted-foreground text-muted-foreground" />
-          <div className="ml-auto flex items-center gap-[26px]">
+          <div className="ml-auto flex items-center gap-[26px] pl-[32px]">
             <SkipBack className="size-[18px] fill-current" />
             <button className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <Play className="ml-0.5 size-[18px] fill-current" />
