@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  ListFilter, Plus, ArrowLeftToLine, Music2, Search, MoreHorizontal, Bell, Play, Pin,
-  Volume2, Heart, SkipBack, SkipForward, Shuffle, Repeat, Maximize2, Music,
+  Music2, Search, MoreHorizontal, Bell, Play, Pin,
+  Volume2, Heart, Home, Library, Settings, SkipBack, SkipForward, Shuffle, Repeat, Maximize2,
 } from "lucide-react";
 import hero from "@/assets/hero.jpg";
 import covers from "@/assets/covers.jpg";
@@ -31,12 +31,6 @@ function Tile({ src, i, className = "" }: { src: string; i: number; className?: 
   );
 }
 
-const playlists = [
-  ["Feel Good Hits", 121], ["Chill Vibes", 67], ["Focus Mode", 17], ["Weekend Tunes", 45],
-  ["Morning Boost", 194], ["Relax & Unwind", 8], ["Workout Energy", 62], ["Party Mix", 103], ["Rainy Day Sounds", 29],
-] as const;
-const plCovers = [0, 1, 2, 9, 7, 3, 12, 4, 5];
-
 const songs = [
   ["Cruel Summer", "Taylor Swift", "Lover", "22.6.2024", "4:00", 0],
   ["Good Morning", "Kanye West", "Graduation", "24.6.2024", "3:15", 3],
@@ -60,7 +54,7 @@ function Index() {
     <div className="h-screen w-screen">
       <div className="bg-app flex h-full w-full flex-col overflow-hidden text-foreground">
         {/* Top bar */}
-        <header className="flex h-[56px] shrink-0 items-center bg-card pl-[17px] pr-[22px]">
+        <header className="flex h-[56px] shrink-0 items-center pl-[20px] pr-[22px]">
           <div className="bg-logo -ml-[2px] mr-[12px] flex size-8 items-center justify-center rounded-[9px] text-foreground">
             <Music2 className="size-[18px]" strokeWidth={2.5} />
           </div>
@@ -84,30 +78,11 @@ function Index() {
 
         <div className="flex min-h-0 flex-1">
           {/* Sidebar */}
-          <aside className="flex w-[238px] shrink-0 flex-col">
-            <div className="flex items-center px-[15px] pt-[17px] pb-[12px] text-[14.5px] text-muted-foreground">
-              <ListFilter className="mr-2 size-4" /> Recent
-              <Plus className="ml-auto size-[18px]" />
-              <ArrowLeftToLine className="ml-5 size-[18px]" />
-            </div>
-            <div className="scroll-thin flex-1 overflow-y-auto">
-              {playlists.map(([name, n], idx) => (
-                <div key={name} className={`flex h-[71.5px] items-center gap-3 px-[15px] ${idx === 1 ? "bg-row-active" : ""}`}>
-                  <div className="relative size-[56px] shrink-0 overflow-hidden rounded-lg">
-                    <Tile src={covers} i={plCovers[idx] ?? 0} className="size-full" />
-                    <span className="absolute bottom-1 left-1.5 flex items-center text-[10.5px] font-semibold text-foreground drop-shadow">
-                      <Music className="mr-0.5 size-2.5" />{n}
-                    </span>
-                  </div>
-                  <div>
-                    <div className="flex items-center gap-1.5 text-[14.5px] font-medium">
-                      {name}{idx === 1 && <Volume2 className="size-3.5 fill-current" />}
-                    </div>
-                    <div className="text-[12.5px] text-muted-foreground">Playlist</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <aside className="mx-[10px] mb-[10px] flex w-[52px] shrink-0 flex-col items-center rounded-[14px] bg-rail py-4 text-foreground">
+            <button aria-label="Home" className="flex size-10 items-center justify-center"><Home className="size-[22px] fill-current" /></button>
+            <button aria-label="Search" className="mt-2 flex size-10 items-center justify-center text-muted-foreground"><Search className="size-[22px]" strokeWidth={2.5} /></button>
+            <button aria-label="Library" className="mt-2 flex size-10 items-center justify-center text-muted-foreground"><Library className="size-[22px]" /></button>
+            <button aria-label="Settings" className="mt-auto flex size-10 items-center justify-center text-muted-foreground"><Settings className="size-[22px]" /></button>
           </aside>
 
           {/* Main */}
@@ -186,7 +161,7 @@ function Index() {
             <div className="text-[12.5px] text-muted-foreground">Taylor Swift</div>
           </div>
           <Heart className="size-4 fill-muted-foreground text-muted-foreground" />
-          <div className="ml-auto flex items-center gap-[26px]">
+          <div className="ml-auto flex items-center gap-[26px] pl-[32px]">
             <SkipBack className="size-[18px] fill-current" />
             <button className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <Play className="ml-0.5 size-[18px] fill-current" />
