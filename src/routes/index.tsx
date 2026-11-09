@@ -57,8 +57,8 @@ const topArtists = [
 
 function Index() {
   return (
-    <div className="flex min-h-screen items-center justify-center p-10">
-      <div className="bg-app flex h-[802px] w-[1428px] flex-col overflow-hidden rounded-[18px] text-foreground">
+    <div className="h-screen w-screen">
+      <div className="bg-app flex h-full w-full flex-col overflow-hidden text-foreground">
         {/* Top bar */}
         <header className="flex h-[56px] shrink-0 items-center bg-card pl-[17px] pr-[22px]">
           <div className="bg-logo -ml-[2px] mr-[12px] flex size-8 items-center justify-center rounded-[9px] text-primary-foreground">
@@ -126,12 +126,12 @@ function Index() {
               </button>
             </section>
 
-            <div className="grid grid-cols-[56px_322px_281px_96px_1fr] items-center px-[0px] pb-[8px] pt-[23px] text-[13px] text-muted-foreground">
+            <div className="grid grid-cols-[56px_minmax(0,1.6fr)_minmax(0,1.4fr)_96px_80px] items-center px-[0px] pb-[8px] pt-[23px] text-[13px] text-muted-foreground">
               <span className="pl-[24px]">#</span><span>Title</span><span>Album</span><span>Added date</span><span>Time</span>
             </div>
             <div className="scroll-thin min-h-0 flex-1 overflow-y-auto pb-2">
               {songs.map(([t, a, al, d, tm, c], i) => (
-                <div key={t} className={`grid h-[51.7px] grid-cols-[56px_322px_281px_96px_1fr] items-center ${i === 0 ? "bg-row-active" : ""}`}>
+                <div key={t} className={`grid h-[51.7px] grid-cols-[56px_minmax(0,1.6fr)_minmax(0,1.4fr)_96px_80px] items-center ${i === 0 ? "bg-row-active" : ""}`}>
                   <span className="pl-[24px] text-[14.5px] text-muted-foreground">
                     {i === 0 ? <Play className="size-3 fill-foreground text-foreground" /> : i + 1}
                   </span>
@@ -153,7 +153,7 @@ function Index() {
           </main>
 
           {/* Right */}
-          <aside className="flex w-[346px] shrink-0 flex-col gap-[8px] px-[8px]">
+          <aside className="flex w-[22%] min-w-[260px] max-w-[346px] shrink-0 flex-col gap-[8px] px-[8px]">
             <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-[14px] bg-panel">
               <div className="flex items-center px-[24px] pt-[22px] pb-[14px] text-[14.5px] text-muted-foreground">
                 Top Artists <MoreHorizontal className="ml-auto size-5" />
@@ -186,7 +186,7 @@ function Index() {
             <div className="text-[12.5px] text-muted-foreground">Taylor Swift</div>
           </div>
           <Heart className="size-4 fill-muted-foreground text-muted-foreground" />
-          <div className="ml-[148px] flex items-center gap-[26px]">
+          <div className="ml-auto flex items-center gap-[26px]">
             <SkipBack className="size-[18px] fill-current" />
             <button className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <Play className="ml-0.5 size-[18px] fill-current" />
@@ -194,14 +194,14 @@ function Index() {
             <SkipForward className="size-[18px] fill-current" />
           </div>
           <span className="ml-[38px] text-[12.5px] text-muted-foreground">00:57</span>
-          <div className="mx-[8px] h-[3px] w-[436px] rounded-full bg-track">
+          <div className="mx-[8px] h-[3px] min-w-0 flex-1 rounded-full bg-track">
             <div className="h-full w-[36%] rounded-full bg-primary" />
           </div>
           <span className="text-[12.5px] text-muted-foreground">2:58</span>
           <div className="ml-[40px] flex items-center gap-[22px]">
             <Shuffle className="size-[18px]" /><Repeat className="size-[18px]" /><Volume2 className="size-[18px]" />
           </div>
-          <Maximize2 className="ml-auto mr-[8px] size-[18px]" />
+          <Maximize2 className="ml-[40px] mr-[8px] size-[18px]" />
         </footer>
       </div>
     </div>
